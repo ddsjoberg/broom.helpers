@@ -160,6 +160,8 @@ tidy_detach_model()
   <span class='kw'>show_single_row</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>intercept</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>keep_model</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>strict</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='no'>...</span>
 )</pre>
 
@@ -217,6 +219,16 @@ variables that should be displayed on a single row, when
     <tr>
       <th>keep_model</th>
       <td><p>should the model be kept as an attribute of the final result?</p></td>
+    </tr>
+    <tr>
+      <th>quiet</th>
+      <td><p>logical argument whether broom.helpers should return an error
+when requested output cannot be generated. Default is FALSE</p></td>
+    </tr>
+    <tr>
+      <th>strict</th>
+      <td><p>logical argument whether broom.helpers should return an error
+when requested output cannot be generated. Default is FALSE</p></td>
     </tr>
     <tr>
       <th>...</th>
