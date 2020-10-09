@@ -164,7 +164,7 @@ tidy_detach_model()
   add_header_rows <span class='op'>=</span> <span class='cn'>FALSE</span>,
   show_single_row <span class='op'>=</span> <span class='cn'>NULL</span>,
   intercept <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  keep <span class='op'>=</span> <span class='fu'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='op'>(</span><span class='op'>)</span>,
+  include <span class='op'>=</span> <span class='fu'><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything</a></span><span class='op'>(</span><span class='op'>)</span>,
   keep_model <span class='op'>=</span> <span class='cn'>FALSE</span>,
   quiet <span class='op'>=</span> <span class='cn'>FALSE</span>,
   strict <span class='op'>=</span> <span class='cn'>FALSE</span>,
@@ -206,7 +206,7 @@ but a bad idea if there is no log or logit link; defaults to <code>FALSE</code>.
     </tr>
     <tr>
       <th>no_reference_row</th>
-      <td><p>a vector indicating the name of variables
+      <td><p>variables (accepts tidyselect notation)
 for those no reference row should be added, when <code>add_reference_rows = TRUE</code></p></td>
     </tr>
     <tr>
@@ -219,8 +219,8 @@ for those no reference row should be added, when <code>add_reference_rows = TRUE
     </tr>
     <tr>
       <th>show_single_row</th>
-      <td><p>a vector indicating the names of binary
-variables that should be displayed on a single row, when
+      <td><p>variables that should be displayed
+on a single row (accepts tidyselect notation), when
 <code>add_header_rows</code> is <code>TRUE</code></p></td>
     </tr>
     <tr>
@@ -228,9 +228,9 @@ variables that should be displayed on a single row, when
       <td><p>should the intercept(s) be included?</p></td>
     </tr>
     <tr>
-      <th>keep</th>
-      <td><p>variables to keep. Use <code><a href='https://rdrr.io/r/base/Arithmetic.html'>-</a></code> to remove a variable.
-Default is <code><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything()</a></code></p></td>
+      <th>include</th>
+      <td><p>variables to include (accepts tidyselect notation).
+Use <code><a href='https://rdrr.io/r/base/Arithmetic.html'>-</a></code> to remove a variable. Default is <code><a href='https://tidyselect.r-lib.org/reference/everything.html'>everything()</a></code></p></td>
     </tr>
     <tr>
       <th>keep_model</th>
