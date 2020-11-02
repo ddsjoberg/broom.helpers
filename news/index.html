@@ -122,15 +122,44 @@
 <a href="#broomhelpers-development-version" class="anchor"></a>broom.helpers (development version)<small> Unreleased </small>
 </h1>
 <ul>
+<li>
+<strong>Minor breaking change:</strong> column <code>var_type</code> returned by <code><a href="../reference/tidy_identify_variables.html">tidy_identify_variables()</a></code> is now equal to <code>"dichotomous"</code> for categorical variables with only 2 levels</li>
+<li>
+<strong>Minor breaking changes::</strong> for intercepts terms, <code><a href="../reference/tidy_identify_variables.html">tidy_identify_variables()</a></code> now populates <code>variable</code> column by <code>term</code> content, instead of <code>NA</code> (<a href='https://github.com/larmarange/broom.helpers/issues/66'>#66</a>)</li>
+<li>
+<strong>Minor breaking change:</strong> If the variables can’t be identified by <code><a href="../reference/tidy_identify_variables.html">tidy_identify_variables()</a></code>, the <code>variable</code> column is now populated with the content of the <code>term</code> column (<a href='https://github.com/larmarange/broom.helpers/issues/63'>#63</a>)</li>
+<li>New selecting functions <code><a href="../reference/select_helpers.html">all_continuous()</a></code>, <code><a href="../reference/select_helpers.html">all_categorical()</a></code>, <code><a href="../reference/select_helpers.html">all_dichotomous()</a></code>, and <code><a href="../reference/select_helpers.html">all_interaction()</a></code> for selecting variables from models (<a href='https://github.com/larmarange/broom.helpers/issues/54'>#54</a>)</li>
 <li>Added support for multiple imputation models from the {mice} package. The model passed must be the un-pooled models, and the pooling step included in <code>tidy_fun=</code> (<a href='https://github.com/larmarange/broom.helpers/issues/49'>#49</a> <a href='https://github.com/ddsjoberg'>@ddsjoberg</a>)</li>
 <li>New function <code><a href="../reference/tidy_select_variables.html">tidy_select_variables()</a></code> to keep/drop selected variables in the output (<a href='https://github.com/larmarange/broom.helpers/issues/45'>#45</a>)</li>
 <li>New functions <code><a href="../reference/tidy_add_coefficients_type.html">tidy_add_coefficients_type()</a></code> and <code>model_get_coefficients_type</code> to get the type of coefficients (generic, logistic, Poisson or proportional hazard) used by a model (<a href='https://github.com/larmarange/broom.helpers/issues/46'>#46</a>)</li>
+<li>
+<code><a href="../reference/tidy_add_contrasts.html">tidy_add_contrasts()</a></code> and <code><a href="../reference/model_list_contrasts.html">model_list_contrasts()</a></code> now return an additional column <code>contrasts_type</code>
+</li>
 <li>New <code>no_reference_row</code> argument for <code><a href="../reference/tidy_add_reference_rows.html">tidy_add_reference_rows()</a></code> (<a href='https://github.com/larmarange/broom.helpers/issues/47'>#47</a>)</li>
-<li>The <code>exponentiate</code> argument is now passed to the <code>tidy_*()</code> functions, as an attribute attached to the tibble</li>
+<li>New method <code>model_get_nlevels</code> to get the number of levels of categorical variables</li>
+<li>New column <code>var_nlevels</code> returned by <code><a href="../reference/tidy_identify_variables.html">tidy_identify_variables()</a></code>, <code><a href="../reference/model_identify_variables.html">model_identify_variables()</a></code> and <code><a href="../reference/tidy_plus_plus.html">tidy_plus_plus()</a></code>
+</li>
+<li>Categorical terms can now be customized with a pattern taking into account term level, reference level and/or variable label, see <code><a href="../reference/model_list_terms_levels.html">model_list_terms_levels()</a></code> and <code>categorical_terms_pattern</code> in <code><a href="../reference/tidy_plus_plus.html">tidy_plus_plus()</a></code> and <code>tidy_add_term_labels</code> (<a href='https://github.com/larmarange/broom.helpers/issues/61'>#61</a>)</li>
+<li>
+<code><a href="../reference/model_list_terms_levels.html">model_list_terms_levels()</a></code> now returns additional columns (<code>level</code>, <code>reference_level</code> <code>contrasts_type</code>, <code>var_label</code>, <code>var_levels</code> and <code>dichotomous</code>)</li>
+<li>
+<code><a href="../reference/model_list_variables.html">model_list_variables()</a></code> now returns an additional <code>var_label</code> column</li>
+<li>The <code>exponentiate</code> argument is now passed to the <code>tidy_*()</code> functions, as an attribute attached to the tibble, as well as custom labels (<code>variable_labels</code> and <code>term_labels</code>)</li>
 <li>
 <code>show_single_row</code> argument now accepts tidyselect notation (<a href='https://github.com/larmarange/broom.helpers/issues/51'>#51</a> <a href='https://github.com/ddsjoberg'>@ddsjoberg</a>)</li>
+<li>
+<code><a href="../reference/tidy_add_estimate_to_reference_rows.html">tidy_add_estimate_to_reference_rows()</a></code> now relies on <code>emmeans</code> for sum contrasts, allowing to cover a wider range of models</li>
+<li>Tibbles returned by <code>tidy_*</code> functions also inherits of <code>"broom.helpers"</code> class (<a href='https://github.com/larmarange/broom.helpers/issues/56'>#56</a>)</li>
+<li>
+<code>interaction_sep</code> argument has been added to <code><a href="../reference/tidy_plus_plus.html">tidy_plus_plus()</a></code>
+</li>
+<li>Better management of variables with non standard names (<a href='https://github.com/larmarange/broom.helpers/issues/67'>#67</a>)</li>
+<li>
+<code><a href="../reference/.clean_backticks.html">.clean_backticks()</a></code> and <code><a href="../reference/.escape_regex.html">.escape_regex()</a></code> are now exported</li>
 <li>Bug fix for non standard variable names containing a character that would have a special meaning in a regular expression (<a href='https://github.com/larmarange/broom.helpers/issues/44'>#44</a>)</li>
 <li>Bug fix in <code><a href="../reference/tidy_add_header_rows.html">tidy_add_header_rows()</a></code> for <code><a href="https://rdrr.io/pkg/nnet/man/multinom.html">nnet::multinom</a></code> models: label for header rows was missing (<a href='https://github.com/larmarange/broom.helpers/issues/50'>#50</a>)</li>
+<li>Bug fix: now <code><a href="../reference/tidy_identify_variables.html">tidy_identify_variables()</a></code> correctly identify class “integer” for this type of variables (<a href='https://github.com/larmarange/broom.helpers/issues/57'>#57</a>)</li>
+<li>Bug fix for <code><a href="../reference/tidy_add_header_rows.html">tidy_add_header_rows()</a></code> for continuous variables with a non standard name (<a href='https://github.com/larmarange/broom.helpers/issues/70'>#70</a>)</li>
 </ul>
 </div>
     <div id="broomhelpers-100" class="section level1">

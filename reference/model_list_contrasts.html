@@ -141,7 +141,9 @@
 
     <p>A tibble with three columns:</p><ul>
 <li><p><code>variable</code>: variable name</p></li>
-<li><p><code>contrasts</code>: type of contrasts</p></li>
+<li><p><code>contrasts</code>: contrasts used</p></li>
+<li><p><code>contrasts_type</code>: type of contrasts
+("treatment", "sum", "poly", "helmert" or "other")</p></li>
 <li><p><code>reference</code>: for variables with treatment, SAS
 or sum contrasts, position of the reference level</p></li>
 </ul>
@@ -154,6 +156,7 @@ or sum contrasts, position of the reference level</p></li>
 <code><a href='model_get_model_frame.html'>model_get_model_frame</a>()</code>,
 <code><a href='model_get_model_matrix.html'>model_get_model_matrix</a>()</code>,
 <code><a href='model_get_model.html'>model_get_model</a>()</code>,
+<code><a href='model_get_nlevels.html'>model_get_nlevels</a>()</code>,
 <code><a href='model_get_xlevels.html'>model_get_xlevels</a>()</code>,
 <code><a href='model_identify_variables.html'>model_identify_variables</a>()</code>,
 <code><a href='model_list_terms_levels.html'>model_list_terms_levels</a>()</code>,
@@ -167,10 +170,10 @@ or sum contrasts, position of the reference level</p></li>
   contrasts <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>`factor(cyl)` <span class='op'>=</span> <span class='va'>contr.sum</span><span class='op'>)</span>
 <span class='op'>)</span> <span class='op'>%&gt;%</span>
   <span class='fu'>model_list_contrasts</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1 x 3</span><span>
-#&gt;   variable    contrasts reference
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span> factor(cyl) contr.sum         3</div></span></pre>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 1 x 4</span><span>
+#&gt;   variable    contrasts reference contrasts_type
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>         
+#&gt; </span><span style='color: #555555;'>1</span><span> factor(cyl) contr.sum         3 sum           </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

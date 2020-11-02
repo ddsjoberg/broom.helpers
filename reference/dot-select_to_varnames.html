@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get the model from model objects — model_get_model • broom.helpers</title>
+<title>Variable selector — .select_to_varnames • broom.helpers</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,10 @@
 
 
 
-<meta property="og:title" content="Get the model from model objects — model_get_model" />
-<meta property="og:description" content="Most model objects are proper R model objects. There are, however, some
-model objects that store the proper object internally (e.g. mice models).
-This function extracts that model object in those cases." />
+<meta property="og:title" content="Variable selector — .select_to_varnames" />
+<meta property="og:description" content="Function takes select()-like inputs and converts the selector to
+a character vector of variable names. Functions accepts tidyselect syntax,
+and additional selector functions defined within the package" />
 
 
 
@@ -116,59 +116,58 @@ This function extracts that model object in those cases." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get the model from model objects</h1>
-    <small class="dont-index">Source: <a href='https://github.com/larmarange/broom.helpers/blob/master/R/model_get_model.R'><code>R/model_get_model.R</code></a></small>
-    <div class="hidden name"><code>model_get_model.Rd</code></div>
+    <h1>Variable selector</h1>
+    <small class="dont-index">Source: <a href='https://github.com/larmarange/broom.helpers/blob/master/R/select_utilities.R'><code>R/select_utilities.R</code></a></small>
+    <div class="hidden name"><code>dot-select_to_varnames.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Most model objects are proper R model objects. There are, however, some
-model objects that store the proper object internally (e.g. mice models).
-This function extracts that model object in those cases.</p>
+    <p>Function takes <code>select()</code>-like inputs and converts the selector to
+a character vector of variable names. Functions accepts tidyselect syntax,
+and additional selector functions defined within the package</p>
     </div>
 
-    <pre class="usage"><span class='fu'>model_get_model</span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span>
-
-<span class='co'># S3 method for default</span>
-<span class='fu'>model_get_model</span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span>
-
-<span class='co'># S3 method for mira</span>
-<span class='fu'>model_get_model</span><span class='op'>(</span><span class='va'>model</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>.select_to_varnames</span><span class='op'>(</span>
+  <span class='va'>select</span>,
+  data <span class='op'>=</span> <span class='cn'>NULL</span>,
+  var_info <span class='op'>=</span> <span class='cn'>NULL</span>,
+  arg_name <span class='op'>=</span> <span class='cn'>NULL</span>,
+  select_single <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>model</th>
-      <td><p>a model object</p></td>
+      <th>select</th>
+      <td><p>A single object selecting variables, e.g. <code><a href='https://rdrr.io/r/base/c.html'>c(age, stage)</a></code>,
+<code><a href='https://tidyselect.r-lib.org/reference/starts_with.html'>starts_with("age")</a></code></p></td>
+    </tr>
+    <tr>
+      <th>data</th>
+      <td><p>A data frame to select columns from. Default is NULL</p></td>
+    </tr>
+    <tr>
+      <th>var_info</th>
+      <td><p>A data frame of variable names and attributes. May also pass
+a character vector of variable names. Default is NULL</p></td>
+    </tr>
+    <tr>
+      <th>arg_name</th>
+      <td><p>Optional string indicating the source argument name. This
+helps in the error messaging. Default is NULL.</p></td>
+    </tr>
+    <tr>
+      <th>select_single</th>
+      <td><p>Logical indicating whether the result must be a single
+variable. Default is <code>FALSE</code></p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <div class='dont-index'><p>Other model_helpers: 
-<code><a href='model_get_coefficients_type.html'>model_get_coefficients_type</a>()</code>,
-<code><a href='model_get_contrasts.html'>model_get_contrasts</a>()</code>,
-<code><a href='model_get_model_frame.html'>model_get_model_frame</a>()</code>,
-<code><a href='model_get_model_matrix.html'>model_get_model_matrix</a>()</code>,
-<code><a href='model_get_nlevels.html'>model_get_nlevels</a>()</code>,
-<code><a href='model_get_xlevels.html'>model_get_xlevels</a>()</code>,
-<code><a href='model_identify_variables.html'>model_identify_variables</a>()</code>,
-<code><a href='model_list_contrasts.html'>model_list_contrasts</a>()</code>,
-<code><a href='model_list_terms_levels.html'>model_list_terms_levels</a>()</code>,
-<code><a href='model_list_variables.html'>model_list_variables</a>()</code></p></div>
+    <p>A character vector of variable names</p>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>hp</span> <span class='op'>~</span> <span class='va'>mpg</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>cyl</span><span class='op'>)</span>, <span class='va'>mtcars</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>model_get_model</span><span class='op'>(</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; 
-#&gt; Call:
-#&gt; lm(formula = hp ~ mpg + factor(cyl), data = mtcars)
-#&gt; 
-#&gt; Coefficients:
-#&gt;  (Intercept)           mpg  factor(cyl)6  factor(cyl)8  
-#&gt;      171.349        -3.327        16.623        88.105  
-#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

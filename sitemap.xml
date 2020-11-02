@@ -4,6 +4,21 @@
     <loc>https://larmarange.github.io/broom.helpers//index.html</loc>
   </url>
   <url>
+    <loc>https://larmarange.github.io/broom.helpers//reference/dot-clean_backticks.html</loc>
+  </url>
+  <url>
+    <loc>https://larmarange.github.io/broom.helpers//reference/dot-escape_regex.html</loc>
+  </url>
+  <url>
+    <loc>https://larmarange.github.io/broom.helpers//reference/dot-formula_list_to_named_list.html</loc>
+  </url>
+  <url>
+    <loc>https://larmarange.github.io/broom.helpers//reference/dot-generic_selector.html</loc>
+  </url>
+  <url>
+    <loc>https://larmarange.github.io/broom.helpers//reference/dot-select_to_varnames.html</loc>
+  </url>
+  <url>
     <loc>https://larmarange.github.io/broom.helpers//reference/model_get_coefficients_type.html</loc>
   </url>
   <url>
@@ -17,6 +32,9 @@
   </url>
   <url>
     <loc>https://larmarange.github.io/broom.helpers//reference/model_get_model_matrix.html</loc>
+  </url>
+  <url>
+    <loc>https://larmarange.github.io/broom.helpers//reference/model_get_nlevels.html</loc>
   </url>
   <url>
     <loc>https://larmarange.github.io/broom.helpers//reference/model_get_xlevels.html</loc>
@@ -35,6 +53,9 @@
   </url>
   <url>
     <loc>https://larmarange.github.io/broom.helpers//reference/reexports.html</loc>
+  </url>
+  <url>
+    <loc>https://larmarange.github.io/broom.helpers//reference/select_helpers.html</loc>
   </url>
   <url>
     <loc>https://larmarange.github.io/broom.helpers//reference/tidy_add_coefficients_type.html</loc>
