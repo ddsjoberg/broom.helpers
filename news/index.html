@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">broom.helpers</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0.9000</span>
       </span>
     </div>
 
@@ -122,10 +122,21 @@
 <a href="#broomhelpers-development-version" class="anchor"></a>broom.helpers (development version)<small> Unreleased </small>
 </h1>
 <ul>
+<li>New function <code><a href="../reference/tidy_add_n.html">tidy_add_n()</a></code> to add the number of observations (and for relevant models the number of events and exposure time) (<a href='https://github.com/larmarange/broom.helpers/issues/64'>#64</a>)</li>
+<li>New option <code>add_n</code> in <code><a href="../reference/tidy_plus_plus.html">tidy_plus_plus()</a></code> (<a href='https://github.com/larmarange/broom.helpers/issues/64'>#64</a>)</li>
+<li>New functions <code><a href="../reference/model_get_n.html">model_get_n()</a></code>, <code><a href="../reference/model_get_weights.html">model_get_weights()</a></code>, <code><a href="../reference/model_get_offset.html">model_get_offset()</a></code>, <code><a href="../reference/model_get_response.html">model_get_response()</a></code> and <code><a href="../reference/model_compute_terms_contributions.html">model_compute_terms_contributions()</a></code> (<a href='https://github.com/larmarange/broom.helpers/issues/64'>#64</a>)</li>
+<li>Bug fix in <code><a href="../reference/tidy_add_term_labels.html">tidy_add_term_labels()</a></code> for variables with non standard names (<a href='https://github.com/larmarange/broom.helpers/issues/77'>#77</a>)</li>
+</ul>
+</div>
+    <div id="broomhelpers-110" class="section level1">
+<h1 class="page-header" data-toc-text="1.1.0">
+<a href="#broomhelpers-110" class="anchor"></a>broom.helpers 1.1.0<small> 2020-11-24 </small>
+</h1>
+<ul>
 <li>
 <strong>Minor breaking change:</strong> column <code>var_type</code> returned by <code><a href="../reference/tidy_identify_variables.html">tidy_identify_variables()</a></code> is now equal to <code>"dichotomous"</code> for categorical variables with only 2 levels</li>
 <li>
-<strong>Minor breaking changes::</strong> for intercepts terms, <code><a href="../reference/tidy_identify_variables.html">tidy_identify_variables()</a></code> now populates <code>variable</code> column by <code>term</code> content, instead of <code>NA</code> (<a href='https://github.com/larmarange/broom.helpers/issues/66'>#66</a>)</li>
+<strong>Minor breaking changes:</strong> for intercepts terms, <code><a href="../reference/tidy_identify_variables.html">tidy_identify_variables()</a></code> now populates <code>variable</code> column by <code>term</code> content, instead of <code>NA</code> (<a href='https://github.com/larmarange/broom.helpers/issues/66'>#66</a>)</li>
 <li>
 <strong>Minor breaking change:</strong> If the variables can’t be identified by <code><a href="../reference/tidy_identify_variables.html">tidy_identify_variables()</a></code>, the <code>variable</code> column is now populated with the content of the <code>term</code> column (<a href='https://github.com/larmarange/broom.helpers/issues/63'>#63</a>)</li>
 <li>Exporting select helper utility functions (<a href='https://github.com/larmarange/broom.helpers/issues/65'>#65</a>)
