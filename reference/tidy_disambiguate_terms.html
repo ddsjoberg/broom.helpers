@@ -77,7 +77,7 @@ is kept in a new column original_term." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">broom.helpers</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1.9000</span>
       </span>
     </div>
 
@@ -179,9 +179,7 @@ when requested output cannot be generated. Default is FALSE</p></td>
   <span class='va'>mod</span> <span class='op'>&lt;-</span> <span class='fu'>lme4</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/lme4/man/lmer.html'>lmer</a></span><span class='op'>(</span><span class='va'>marker</span> <span class='op'>~</span> <span class='va'>stage</span> <span class='op'>+</span> <span class='op'>(</span><span class='fl'>1</span><span class='op'>|</span><span class='va'>grade</span><span class='op'>)</span> <span class='op'>+</span> <span class='op'>(</span><span class='va'>death</span><span class='op'>|</span><span class='va'>response</span><span class='op'>)</span>, <span class='va'>trial</span><span class='op'>)</span>
   <span class='va'>mod</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='tidy_attach_model.html'>tidy_and_attach</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> <span class='fu'>tidy_disambiguate_terms</span><span class='op'>(</span><span class='op'>)</span>
 <span class='op'>}</span>
-</div><div class='output co'>#&gt; <span class='message'>Loading required package: lme4</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: Matrix</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: broom.mixed</span></div><div class='output co'>#&gt; <span class='message'>Registered S3 method overwritten by 'broom.mixed':</span>
-#&gt; <span class='message'>  method      from </span>
-#&gt; <span class='message'>  tidy.gamlss broom</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: gtsummary</span></div><div class='output co'>#&gt; <span class='message'></span>
+</div><div class='output co'>#&gt; <span class='message'>Loading required package: lme4</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: Matrix</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: broom.mixed</span></div><div class='output co'>#&gt; <span class='message'>Loading required package: gtsummary</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Attaching package: ‘gtsummary’</span></div><div class='output co'>#&gt; <span class='message'>The following object is masked from ‘package:broom.helpers’:</span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    all_continuous</span></div><div class='output co'>#&gt; <span class='message'>boundary (singular) fit: see ?isSingular</span></div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 9 x 7</span><span>
