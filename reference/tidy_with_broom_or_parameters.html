@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • broom.helpers</title>
+<title>Tidy a model with broom or parameters — tidy_with_broom_or_parameters • broom.helpers</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,9 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Tidy a model with broom or parameters — tidy_with_broom_or_parameters" />
+<meta property="og:description" content="Try to tidy a model with broom::tidy(). If it fails, will try to tidy the
+model using parameters::model_parameters() through tidy_parameters()." />
 
 
 
@@ -58,7 +60,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-article-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -113,18 +115,51 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Articles</h1>
+    <h1>Tidy a model with broom or parameters</h1>
+    <small class="dont-index">Source: <a href='https://github.com/larmarange/broom.helpers/blob/master/R/tidiers.R'><code>R/tidiers.R</code></a></small>
+    <div class="hidden name"><code>tidy_with_broom_or_parameters.Rd</code></div>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
-
-      <dl>
-        <dt><a href="tidy.html">Getting Started with broom.helpers</a></dt>
-        <dd></dt>
-      </dl>
+    <div class="ref-description">
+    <p>Try to tidy a model with <code><a href='https://generics.r-lib.org/reference/tidy.html'>broom::tidy()</a></code>. If it fails, will try to tidy the
+model using <code><a href='https://easystats.github.io/parameters/reference/model_parameters.html'>parameters::model_parameters()</a></code> through <code><a href='tidy_parameters.html'>tidy_parameters()</a></code>.</p>
     </div>
+
+    <pre class="usage"><span class='fu'>tidy_with_broom_or_parameters</span><span class='op'>(</span><span class='va'>x</span>, conf.int <span class='op'>=</span> <span class='cn'>TRUE</span>, conf.level <span class='op'>=</span> <span class='fl'>0.95</span>, <span class='va'>...</span><span class='op'>)</span></pre>
+
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>a model</p></td>
+    </tr>
+    <tr>
+      <th>conf.int</th>
+      <td><p>logical indicating whether or not to include a confidence
+interval in the tidied output</p></td>
+    </tr>
+    <tr>
+      <th>conf.level</th>
+      <td><p>the confidence level to use for the confidence interval</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>additional parameters passed to <code><a href='https://generics.r-lib.org/reference/tidy.html'>broom::tidy()</a></code> or
+<code><a href='https://easystats.github.io/parameters/reference/model_parameters.html'>parameters::model_parameters()</a></code></p></td>
+    </tr>
+    </table>
+
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other custom_tieders: 
+<code><a href='tidy_parameters.html'>tidy_parameters</a>()</code></p></div>
+
+  </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
